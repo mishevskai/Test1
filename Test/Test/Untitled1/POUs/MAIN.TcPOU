@@ -1,13 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1">
-  <POU Name="MAIN" Id="{6ac21622-cb9e-4547-a12d-3a4a3d50f99e}">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="MAIN" Id="{6ac21622-cb9e-4547-a12d-3a4a3d50f99e}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
+	test		: BOOL;
+	sensor		: BOOL;
 END_VAR
-]]>
-    </Declaration>
+]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[IF sensor THEN 
+	test:= TRUE;
+END_IF]]></ST>
     </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="2" Count="0" />
+      <LineId Id="8" Count="1" />
+    </LineIds>
   </POU>
 </TcPlcObject>
